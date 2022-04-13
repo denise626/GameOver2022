@@ -55,11 +55,46 @@
 
  <!-- MAIN SECTION-->
 
+ 
  <main class="flex-shrink-0">
-     <div class="container">
-
-     </div>
- </main>
+    <div class="container mt-5">
+       <div class="row row-cols-1 row-cols-lg-2">
+           <div class="col col-lg-4 border-end border-2">
+               <h1>GAME OVER: A Coding Project</h1>
+               <h4 class="lead">
+                   When it is <strong>GAME OVER</strong>, Play Again! A javascript coding exercise using loops. Write a program that prints the numbers from 1 to 100
+                   and for multiples of '3' display "Game" and for multiples of '5' display "Over". If a multiple of both, display "Game Over".
+               </h4>
+               <h2 class="mt-5 border-bottom border-2">Instructions</h2>
+               <p>Enter a starting game value and an ending over value. Press the button and the values will appear.</p>
+           </div>
+           <div class="col col-lg-8">
+               <div>
+                   <h5>Enter Values</h5>
+                   <form class="row gy-2 gx-3">
+                       <div class="col">
+                           <input id="startValue" type="number" class="form-control" placeholder="Start Value" value=0 aria-label="Start Value">
+                       </div>
+                       <div class="col">
+                           <input id="endValue" type="number" class="form-control" placeholder="End Value" value=100 aria-label="End Value">
+                       </div>
+                       <div class="col-12 d-flex justify-content-end">
+                           <button id="btnSubmit" type="button" class="btn btn-secondary burgundy btn-lg">PLAY AGAIN</button>
+                       </div>
+                   </form>
+                   <h2 class="mt-5 border-bottom border-2">Results</h2>
+                   <div class="table-responsive">
+                       <table class="table table-striped table-sm">
+                           <tbody id="results">
+                               <!--Results Go Here-->
+                           </tbody>
+                       </table>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</main>
 
   <!-- FOOTER SECTION-->
   <footer class="footer mt-auto py-3">

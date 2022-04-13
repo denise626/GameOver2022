@@ -67,6 +67,10 @@ main>.container {
     margin-bottom: 5rem;
 }
 
+.burgundy {
+    color: #580818;
+}
+
 /*.sticky-footer {
 
     position: sticky;
