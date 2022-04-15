@@ -60,12 +60,12 @@
     <div class="container mt-5">
        <div class="row row-cols-1 row-cols-lg-2">
            <div class="col col-lg-4 border-end border-2">
-               <h1>GAME OVER: A Coding Project</h1>
+               <h3 class="fw-bold lh-1 mb-3">GAME OVER: A Coding Project</h3>
                <h4 class="lead">
                    When it is <strong>GAME OVER</strong>, Play Again! A javascript coding exercise using loops. Write a program that prints the numbers from 1 to 100
-                   and for multiples of '3' display "Game" and for multiples of '5' display "Over". If a multiple of both, display "Game Over".
+                   and for multiples of '3' display "Game" and for multiples of '5' display "Over". If a multiple of both, display <strong>"Game Over"</strong>.
                </h4>
-               <h2 class="mt-5 border-bottom border-2">Instructions</h2>
+               <h2 class="mt-2 mt-md-5">Instructions</h2>
                <p>Enter a starting game value and an ending over value. Press the button and the values will appear.</p>
            </div>
            <div class="col col-lg-8">
@@ -73,10 +73,10 @@
                    <h5>Enter Values</h5>
                    <form class="row gy-2 gx-3">
                        <div class="col">
-                           <input id="startValue" type="number" class="form-control" placeholder="Start Value" value=0 aria-label="Start Value">
+                           <input id="gameValue" type="number" class="form-control" placeholder="Game Value" value=3 aria-label="Game Value">
                        </div>
                        <div class="col">
-                           <input id="endValue" type="number" class="form-control" placeholder="End Value" value=100 aria-label="End Value">
+                           <input id="overValue" type="number" class="form-control" placeholder="Over Value" value=5 aria-label="Over Value">
                        </div>
                        <div class="col-12 d-flex justify-content-end">
                            <button id="btnSubmit" type="button" class="btn btn-secondary burgundy btn-lg">PLAY AGAIN</button>
@@ -117,11 +117,24 @@
     </div>
 </footer>
 
+<template id="goTemplate">
+    <tr>
+        <td></td>  <!--index 0-->
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</template>
+
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
 </script>
 <script src="js/site.js"></script>
+<script>
+    document.getElementById("btnSubmit").addEventListener("click", getValues);
+</script>
 
 </body>
 

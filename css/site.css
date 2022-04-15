@@ -55,6 +55,22 @@ footer .social>a:hover{
     color: var(--secondary-color);
 }
 
+
+.Game{
+    color:black;
+    font-weight: bold;
+}
+
+.Over{
+    color:#580818;
+    font-weight: bold;
+}
+
+.GameOver{
+    color:navy;
+    font-weight: bold;
+}
+
 code[class*="language-"],
     pre[class*="language-"] {
         white-space: pre-wrap;
@@ -70,6 +86,8 @@ main>.container {
 .burgundy {
     color: #580818;
 }
+
+
 
 /*.sticky-footer {
 
