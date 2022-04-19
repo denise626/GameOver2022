@@ -63,17 +63,119 @@
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col-lg-8">
                 <pre class="line-numbers"><code class="language-javascript">
-                    //Call Hello World
-                    function helloWorld{
-                    alert("hello World");
-                    }    
+                    //Get values from the user. We need to get the game and the over values.
+function getValues(){
+
+}
+
+//get the user values from the page
+let gameValue = document.getElementById("gameValue").value;
+let overValue = document.getElementById("overValue").value;
+
+//parse for numbers
+gameValue = parseInt(gameValue);
+overValue = parseInt(overValue);
+
+//check that the numbers are integers
+    if (Number.isInteger(gameValue) && Number.isInteger(overValue)) {
+
+    //we call gameOver
+    let goArray = gameOver(gameValue, overValue);
+    //call displayData and write the values to the screen
+
+    displayData(goArray);
+    }else{
+        alert("You must enter an integer.")
+    }
+
+//do game over
+function gameOver(gameValue, overValue)
+{
+    let returnArray = [];
+    //initialize the returnArray
+
+    //loop from 1 to 100
+    for (let i = 1; i <= 100 ; i++) {
+         
+        //check to see if divisible by both (3 and 5)
+        //check to see if divisible by game value (3)
+        //check to see if divisible by over value (5)
+        if(i % gameValue == 0 && i % overValue == 0){
+            returnArray.push('GameOver');
+        }else if (i % gameValue == 0){
+            returnArray.push('Game');
+        }else if (i % overValue == 0){
+            returnArray.push('Over')
+        }else{
+            returnArray.push(i);
+        }
+    }    
+      
+    return returnArray;
+}
+
+//loop over the array and create a tablerow for each item
+function displayData(goArray) {
+
+    //get the table body element from the page
+    let tableBody = document.getElementById("results");
+
+    //get the template row
+    let templateRow = document.getElementById("goTemplate");
+
+    //clear the table first
+    tableBody.innerHTML = "";
+
+    for (let index = 0; index < goArray.length; index += 5) {
+        
+        let tableRow = document.importNode(templateRow.content, true);
+
+        //grab just the tds and put them in an array
+        let rowCols = tableRow.querySelectorAll("td");
+
+        rowCols[0].classList.add(goArray[index]);
+        rowCols[0].textContent = goArray[index];
+
+        rowCols[1].classList.add(goArray[index + 1]);
+        rowCols[1].textContent = goArray[index+1];
+
+        rowCols[2].classList.add(goArray[index + 2]);
+        rowCols[2].textContent = goArray[index+2];
+
+        rowCols[3].classList.add(goArray[index + 3]);
+        rowCols[3].textContent = goArray[index+3];
+
+        rowCols[4].classList.add(goArray[index + 4]);
+        rowCols[4].textContent = goArray[index+4];
+
+        tableBody.appendChild(tableRow);
+    }
+    
+    //add all the rows to the table
+}
                     </code>       
                 </pre>
             </div>
             <div class="col-lg-4">
-                <p>The code is structured in one function.</p>
-                <h5>Hello World</h5>
-                <p>Hello World is a function that displays an alert with a message of "Hello World".</p>
+                <p>The code for <strong>Game Over</strong> consists of three functions.</p>
+                <h5>Game Over</h5>
+                <p>The first function <strong>getValues</strong> is used to gather the game and over values from the user.
+                The variables gameValue and overValue are defined by using document.getElementById. The user values are then parsed
+                for numbers. An if statement is used to determine if the number is an integer. If the numbers are integers, then we
+                call the values. Then we call displayData so it can write the numbers to the screen when we call on it later on in
+                the code.</p>
+                <p>The second function <strong>gameOver</strong> uses returnArray to put the values into an array. A for loop is 
+                used to see if the values are divisible by 3 or 5 or both. If they are both divisible by 3 and 5, Game Over will 
+                print out. If the number is divisible by 3, then Game will print out. If the number is divisible by 5, then Over
+                will print out. Then returning the returnArray allows the value to be printed to the screen when displayData is 
+                called. </p>
+                <p>The third function <strong>displayData</strong> is used to display the user values to the screen. Get the tableBody
+                and the templateRow from the app.html page. The table is cleared out by using tableBody and the "" to keep numbers
+                from constantly adding on to each other each time the user enters the values and hits the button. We have a for loop that
+                uses importNode and grabs all the table data and puts it in the table. By using importNode, the table row is being imported
+                as a document fragment. A copy is being made and put into the table body. The rolCols add the array and increase it by one 
+                each time until it has looped through each array. The tableBody.appendChild adds all the rows to the table when the function
+                displayData is called.   </p>
             </div>
         </div>
      </div>
